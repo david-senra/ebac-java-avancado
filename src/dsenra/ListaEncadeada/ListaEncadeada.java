@@ -1,3 +1,7 @@
+package dsenra.ListaEncadeada;
+
+import dsenra.Elemento;
+
 public class ListaEncadeada {
 
     private Elemento head;
@@ -7,8 +11,8 @@ public class ListaEncadeada {
         tamanho = 0;
     }
 
-    public void push(int numero) {
-        Elemento novoElemento = new Elemento(numero);
+    public void push(int valor) {
+        Elemento novoElemento = new Elemento(valor);
         if (this.head == null) {
             head = novoElemento;
         } else {
@@ -21,27 +25,28 @@ public class ListaEncadeada {
         tamanho++;
     }
 
-    public void pop() {
+    public int pop() {
         if (size() == 0) {
-            System.out.println("A lista está vazia!");
+            throw new IllegalArgumentException("A fila está vazia!");
         }
         else {
             Elemento elemento = head;
             for (int i = 0; i < tamanho - 2; i++) {
                 elemento = elemento.getProximoElemento();
             }
-            System.out.println("Último elemento removido: " + elemento.getProximoElemento().getNumero());
+            int valorRetornado = elemento.getProximoElemento().getValor();
             elemento.setProximoElemento(elemento.getProximoElemento().getProximoElemento());
             tamanho--;
+            return valorRetornado;
         }
     }
 
-    public void insert(int index, int numero) {
+    public void insert(int index, int valor) {
         if (index > size() - 1) {
-            System.out.println("O valor do índice extrapola o último elemento da lista!");
+            throw new IndexOutOfBoundsException("O valor do índice extrapola o último elemento da lista!");
         }
         else {
-            Elemento elementoInserido = new Elemento(numero);
+            Elemento elementoInserido = new Elemento(valor);
             tamanho++;
             if (index == 0) {
                 elementoInserido.setProximoElemento(head);
@@ -60,7 +65,7 @@ public class ListaEncadeada {
 
     public void remove(int index) {
         if (index > size() - 1) {
-            System.out.println("O valor do índice extrapola o último elemento da lista!");
+            throw new IndexOutOfBoundsException("O valor do índice extrapola o último elemento da lista!");
         }
         else {
             Elemento elemento = head;
@@ -72,16 +77,16 @@ public class ListaEncadeada {
         }
     }
 
-    public void elementAt(int index) {
+    public int elementAt(int index) {
         if (index > size() - 1) {
-            System.out.println("O valor do índice extrapola o último elemento da lista!");
+            throw new IndexOutOfBoundsException("O valor do índice extrapola o último elemento da lista!");
         }
         else {
             Elemento elemento = head;
             for (int i = 0; i < index; i++) {
                 elemento = elemento.getProximoElemento();
             }
-            System.out.println(elemento.getNumero());
+            return elemento.getValor();
         }
     }
 
@@ -96,10 +101,10 @@ public class ListaEncadeada {
         else {
             Elemento elementoAtual = head;
             while (elementoAtual.getProximoElemento() != null){
-                System.out.println(elementoAtual.getNumero());
+                System.out.println(elementoAtual.getValor());
                 elementoAtual = elementoAtual.getProximoElemento();
             }
-            System.out.println(elementoAtual.getNumero());
+            System.out.println(elementoAtual.getValor());
         }
     }
 }

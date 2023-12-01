@@ -1,14 +1,16 @@
+package dsenra;
+
 public class Elemento {
 
-    private final int numero;
+    private final int valor;
     private Elemento proximoElemento;
 
-    public Elemento(int numero) {
-        this.numero = numero;
+    public Elemento(int valor) {
+        this.valor = valor;
     }
 
-    public int getNumero() {
-        return numero;
+    public int getValor() {
+        return valor;
     }
 
     public Elemento getProximoElemento() {
