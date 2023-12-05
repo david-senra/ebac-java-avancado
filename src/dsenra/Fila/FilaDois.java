@@ -26,8 +26,8 @@ public class FilaDois implements IFila {
 
     @Override
     public int dequeue() {
-        if(isEmpty()) {
-            System.out.println("Não há elementos para remover. A fila está vazia!");
+        if (isEmpty()) {
+            throw new IllegalArgumentException("A fila está vazia!");
         }
         int result = head.getValor();
         head = head.getProximoElemento();
@@ -41,7 +41,7 @@ public class FilaDois implements IFila {
     @Override
     public int rear() {
         if (isEmpty()) {
-            System.out.println("A fila está vazia!");
+            throw new IllegalArgumentException("A fila está vazia!");
         }
         return tail.getValor();
     }
@@ -49,7 +49,7 @@ public class FilaDois implements IFila {
     @Override
     public int front() {
         if (isEmpty()) {
-            System.out.println("A fila está vazia!");
+            throw new IllegalArgumentException("A fila está vazia!");
         }
         return head.getValor();
     }

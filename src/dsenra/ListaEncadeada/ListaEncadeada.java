@@ -27,7 +27,7 @@ public class ListaEncadeada {
 
     public int pop() {
         if (size() == 0) {
-            throw new IllegalArgumentException("A fila está vazia!");
+            throw new IllegalArgumentException("A lista está vazia!");
         }
         else {
             Elemento elemento = head;

@@ -46,14 +46,14 @@ public class FilaUm implements IFila {
     @Override
     public int rear() {
         if (this.isEmpty())
-            throw new IllegalArgumentException("A pilha está vazia!");
+            throw new IllegalArgumentException("A fila está vazia!");
         return this.filaUltimo.valor;
     }
 
     @Override
     public int front() {
         if (this.isEmpty())
-            throw new IllegalArgumentException("A pilha está vazia!");
+            throw new IllegalArgumentException("A fila está vazia!");
         return this.primeiroFila.valor;
     }
 
