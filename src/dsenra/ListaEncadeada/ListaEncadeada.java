@@ -5,6 +5,8 @@ import dsenra.Elemento;
 public class ListaEncadeada implements IListaEncadeada {
 
     private Elemento head;
+
+    private Elemento tail;
     private int tamanho;
 
     public ListaEncadeada() {
@@ -14,13 +16,12 @@ public class ListaEncadeada implements IListaEncadeada {
     public void push(int valor) {
         Elemento novoElemento = new Elemento(valor);
         if (this.head == null) {
-            head = novoElemento;
+            head = tail = novoElemento;
         } else {
-            Elemento elementoAtual = head;
-            while (elementoAtual.getProximoElemento() != null){
-                elementoAtual = elementoAtual.getProximoElemento();
-            }
-            elementoAtual.setProximoElemento(novoElemento);
+            tail.setProximoElemento(novoElemento);
+            Elemento elementoAnterior = tail;
+            tail = novoElemento;
+            tail.setElementoAnterior(elementoAnterior);
         }
         tamanho++;
     }
@@ -30,12 +31,9 @@ public class ListaEncadeada implements IListaEncadeada {
             throw new IllegalArgumentException("A lista está vazia!");
         }
         else {
-            Elemento elemento = head;
-            for (int i = 0; i < tamanho - 2; i++) {
-                elemento = elemento.getProximoElemento();
-            }
-            int valorRetornado = elemento.getProximoElemento().getValor();
-            elemento.setProximoElemento(elemento.getProximoElemento().getProximoElemento());
+            int valorRetornado = tail.getValor();
+            tail = tail.getElementoAnterior();
+            tail.setProximoElemento(null);
             tamanho--;
             return valorRetornado;
         }
@@ -50,7 +48,9 @@ public class ListaEncadeada implements IListaEncadeada {
             tamanho++;
             if (index == 0) {
                 elementoInserido.setProximoElemento(head);
+                Elemento proximoElemento = head;
                 head = elementoInserido;
+                proximoElemento.setElementoAnterior(head);
             }
             else {
                 Elemento elemento = head;

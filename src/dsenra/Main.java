@@ -11,7 +11,7 @@ public class Main {
         System.out.println();
         System.out.println("Primeiro Exercício - Java Avançado");
         System.out.println();
-        testeFilaFIFO();
+        testeListaEncadeada();
     }
 
     public static void testePilha() {
@@ -65,29 +65,45 @@ public class Main {
         listaEncTeste.push(5);
         listaEncTeste.push(2);
         listaEncTeste.push(12);
+        listaEncTeste.push(39);
+        listaEncTeste.push(3);
+        listaEncTeste.push(9);
+        listaEncTeste.push(85);
         System.out.println("Tamanho da lista após os pushs: " + listaEncTeste.size());
         System.out.println("Valor na posição 1: " + listaEncTeste.elementAt(0));
         System.out.println("Valor na posição 2: " + listaEncTeste.elementAt(1));
         System.out.println("Valor na posição 3: " + listaEncTeste.elementAt(2));
+        System.out.println("Valor na posição 4: " + listaEncTeste.elementAt(3));
+        System.out.println("Valor na posição 5: " + listaEncTeste.elementAt(4));
+        System.out.println("Valor na posição 6: " + listaEncTeste.elementAt(5));
+        System.out.println("Valor na posição 7: " + listaEncTeste.elementAt(6));
         System.out.println("Representação da Lista:");
         listaEncTeste.printList();
-        listaEncTeste.remove(1);
-        System.out.println("Representação da Lista após a remoção do segundo elemento:");
+        listaEncTeste.remove(4);
+        System.out.println("Representação da Lista após a remoção do quinto elemento:");
         listaEncTeste.printList();
         System.out.println("Novo valor na posição 1: " + listaEncTeste.elementAt(0));
         System.out.println("Novo valor na posição 2: " + listaEncTeste.elementAt(1));
+        System.out.println("Novo valor na posição 3: " + listaEncTeste.elementAt(2));
+        System.out.println("Novo valor na posição 4: " + listaEncTeste.elementAt(3));
+        System.out.println("Novo valor na posição 5: " + listaEncTeste.elementAt(4));
+        System.out.println("Novo valor na posição 6: " + listaEncTeste.elementAt(5));
         listaEncTeste.push(24);
         System.out.println("Representação da Lista após nova adição de elemento:");
         listaEncTeste.printList();
-        System.out.println("Novo valor na posição 3: " + listaEncTeste.elementAt(2));
+        System.out.println("Novo valor na posição 4: " + listaEncTeste.elementAt(3));
         listaEncTeste.pop();
         System.out.println("Representação da Lista após remoção do último elemento usando pop:");
         listaEncTeste.printList();
         listaEncTeste.push(13);
-        listaEncTeste.insert(1,15);
-        System.out.println("Representação da Lista após inserir 13 no fim e 15 na segunda posição:");
+        listaEncTeste.insert(2, 15);
+        System.out.println("Representação da Lista após inserir 13 no fim e 15 na terceira posição:");
         listaEncTeste.printList();
-        System.out.println("Tamanho da lista ao final: " + listaEncTeste.size());
+        System.out.println("Tamanho da lista: " + listaEncTeste.size());
+        listaEncTeste.insert(0, 110);
+        System.out.println("Representação da Lista após inserir 110 na primeira posição:");
+        listaEncTeste.printList();
+        System.out.println("Tamanho da lista: " + listaEncTeste.size());
     }
 
     public static void testeMapaHash() {

@@ -3,6 +3,7 @@ package dsenra;
 public class Elemento {
     private Integer key;
     private final Integer valor;
+    private Elemento elementoAnterior;
     private Elemento proximoElemento;
 
     public Elemento(int valor) {
@@ -29,5 +30,13 @@ public class Elemento {
 
     public void setProximoElemento(Elemento proximoElemento) {
         this.proximoElemento = proximoElemento;
+    }
+
+    public Elemento getElementoAnterior() {
+        return elementoAnterior;
+    }
+
+    public void setElementoAnterior(Elemento elementoAnterior) {
+        this.elementoAnterior = elementoAnterior;
     }
 }
