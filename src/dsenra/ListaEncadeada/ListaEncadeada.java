@@ -13,6 +13,7 @@ public class ListaEncadeada implements IListaEncadeada {
         tamanho = 0;
     }
 
+    @Override
     public void push(int valor) {
         Elemento novoElemento = new Elemento(valor);
         if (this.head == null) {
@@ -26,6 +27,7 @@ public class ListaEncadeada implements IListaEncadeada {
         tamanho++;
     }
 
+    @Override
     public int pop() {
         if (size() == 0) {
             throw new IllegalArgumentException("A lista está vazia!");
@@ -39,6 +41,7 @@ public class ListaEncadeada implements IListaEncadeada {
         }
     }
 
+    @Override
     public void insert(int index, int valor) {
         if (index > size() - 1) {
             throw new IndexOutOfBoundsException("O valor do índice extrapola o último elemento da lista!");
@@ -63,6 +66,7 @@ public class ListaEncadeada implements IListaEncadeada {
         }
     }
 
+    @Override
     public void remove(int index) {
         if (index > size() - 1) {
             throw new IndexOutOfBoundsException("O valor do índice extrapola o último elemento da lista!");
@@ -77,6 +81,7 @@ public class ListaEncadeada implements IListaEncadeada {
         }
     }
 
+    @Override
     public int elementAt(int index) {
         if (index > size() - 1) {
             throw new IndexOutOfBoundsException("O valor do índice extrapola o último elemento da lista!");
@@ -90,10 +95,12 @@ public class ListaEncadeada implements IListaEncadeada {
         }
     }
 
+    @Override
     public int size() {
         return tamanho;
     }
 
+    @Override
     public void printList(){
         if (head == null) {
             System.out.println("Lista vazia!");
