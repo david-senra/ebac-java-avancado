@@ -5,6 +5,7 @@ public interface IListaEncadeada {
     int pop();
     void insert(int index, int valor);
     void remove(int index);
+    int elementAt(int index);
     int size();
-    boolean isEmpty();
+    void printList();
 }

@@ -2,7 +2,7 @@ package dsenra.ListaEncadeada;
 
 import dsenra.Elemento;
 
-public class ListaEncadeada {
+public class ListaEncadeada implements IListaEncadeada {
 
     private Elemento head;
     private int tamanho;

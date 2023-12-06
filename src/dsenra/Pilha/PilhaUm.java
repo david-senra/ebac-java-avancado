@@ -5,6 +5,10 @@ public class PilhaUm implements IPilha {
     private PilhaUm pilhaAnterior;
     private Integer valor;
 
+    public PilhaUm() {
+
+    }
+
     public PilhaUm(PilhaUm pilhaAnterior, Integer valor) {
         this.pilhaAnterior = pilhaAnterior;
         this.valor = valor;

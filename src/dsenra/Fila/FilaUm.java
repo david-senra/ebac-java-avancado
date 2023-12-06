@@ -39,7 +39,7 @@ public class FilaUm implements IFila {
         if (isEmpty()) {
             filaUltimo = null;
         }
-        tamanho++;
+        tamanho--;
         return valorRemover;
     }
 
